@@ -15,7 +15,7 @@ if keyboard_check_pressed(ord("O")){
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 5F529A25
-/// @DnDArgument : "code" "/// @description COMMANDS$(13_10)$(13_10)//ACTIONS KEY$(13_10)ukey = keyboard_check(vk_up) or keyboard_check(ord("W"));$(13_10)dkey = keyboard_check(vk_down) or keyboard_check(ord("S"));$(13_10)lkey = keyboard_check(vk_left) or keyboard_check(ord("A"));$(13_10)rkey = keyboard_check(vk_right) or keyboard_check(ord("D"));$(13_10)//To kick$(13_10)skey = keyboard_check(vk_space);"
+/// @DnDArgument : "code" "/// @description COMMANDS$(13_10)$(13_10)//ACTIONS KEY$(13_10)ukey = keyboard_check(vk_up) or keyboard_check(ord("W"));$(13_10)dkey = keyboard_check(vk_down) or keyboard_check(ord("S"));$(13_10)lkey = keyboard_check(vk_left) or keyboard_check(ord("A"));$(13_10)rkey = keyboard_check(vk_right) or keyboard_check(ord("D"));$(13_10)//To kick$(13_10)skey = keyboard_check(vk_space);$(13_10)//To plant$(13_10)pkey = keyboard_check(vk_shift);"
 /// @description COMMANDS
 
 //ACTIONS KEY
@@ -25,6 +25,8 @@ lkey = keyboard_check(vk_left) or keyboard_check(ord("A"));
 rkey = keyboard_check(vk_right) or keyboard_check(ord("D"));
 //To kick
 skey = keyboard_check(vk_space);
+//To plant
+pkey = keyboard_check(vk_shift);
 
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
