@@ -29,7 +29,7 @@ skey = keyboard_check(vk_space);
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 1FABB3CE
-/// @DnDArgument : "code" "/// @description MOVE STATE$(13_10)$(13_10)//STATE ALIVE$(13_10)if state == "alive" {$(13_10)    sprite_index = s_player;$(13_10)    $(13_10)    // MOUVEMENTS$(13_10)    if ukey {$(13_10)       y -= 15;$(13_10)       sprite_index = s_player;$(13_10)    }$(13_10)    $(13_10)    if dkey {$(13_10)       y += 15;$(13_10)       sprite_index = s_player;$(13_10)    }$(13_10)    $(13_10)    if lkey {$(13_10)       x -= 15;$(13_10)	   image_xscale = -1;$(13_10)    }$(13_10)    $(13_10)    if rkey {$(13_10)       x += 15;$(13_10)	   image_xscale = 1;$(13_10)    }$(13_10)    $(13_10)    //MOUVEMENTS OUT OF SCREEN$(13_10)    x = clamp(x, 100, room_width-100);$(13_10)	y = clamp(y, 100, room_height-100);$(13_10)}"
+/// @DnDArgument : "code" "/// @description MOVE STATE$(13_10)$(13_10)//STATE ALIVE$(13_10)if state == "alive" {$(13_10)    sprite_index = s_player;$(13_10)    $(13_10)    // MOUVEMENTS$(13_10)    if ukey {$(13_10)       y -= 15;$(13_10)       sprite_index = s_player;$(13_10)    }$(13_10)    $(13_10)    if dkey {$(13_10)       y += 15;$(13_10)       sprite_index = s_player;$(13_10)    }$(13_10)    $(13_10)    if lkey {$(13_10)       x -= 15;$(13_10)	   image_xscale = -0.3;$(13_10)    }$(13_10)    $(13_10)    if rkey {$(13_10)       x += 15;$(13_10)	   image_xscale = 0.3;$(13_10)    }$(13_10)    $(13_10)    //MOUVEMENTS OUT OF SCREEN$(13_10)    x = clamp(x, 100, room_width-100);$(13_10)	y = clamp(y, 100, room_height-100);$(13_10)}"
 /// @description MOVE STATE
 
 //STATE ALIVE
@@ -49,12 +49,12 @@ if state == "alive" {
     
     if lkey {
        x -= 15;
-	   image_xscale = -1;
+	   image_xscale = -0.3;
     }
     
     if rkey {
        x += 15;
-	   image_xscale = 1;
+	   image_xscale = 0.3;
     }
     
     //MOUVEMENTS OUT OF SCREEN
@@ -65,7 +65,7 @@ if state == "alive" {
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 139F3948
-/// @DnDArgument : "code" "/// @description DEAD STATE$(13_10)$(13_10)if (hp <= 0){$(13_10)    state = "dead";$(13_10)}$(13_10)$(13_10)if state == "dead" {$(13_10)    //sprite_index = s_player_dying;$(13_10)    $(13_10)    if image_speed > 0 {$(13_10)        if image_index > image_number -1 instance_destroy();    $(13_10)    }$(13_10)}"
+/// @DnDArgument : "code" "/// @description DEAD STATE$(13_10)$(13_10)if (hp <= 0){$(13_10)    state = "dead";$(13_10)}$(13_10)$(13_10)if state == "dead" {$(13_10)    //sprite_index = s_player_dying;$(13_10)    $(13_10)   // if image_speed > 0 {$(13_10)     //   if image_index > image_number -1 instance_destroy();    $(13_10)    //}$(13_10)	$(13_10)	instance_destroy();$(13_10)}"
 /// @description DEAD STATE
 
 if (hp <= 0){
@@ -75,7 +75,9 @@ if (hp <= 0){
 if state == "dead" {
     //sprite_index = s_player_dying;
     
-    if image_speed > 0 {
-        if image_index > image_number -1 instance_destroy();    
-    }
+   // if image_speed > 0 {
+     //   if image_index > image_number -1 instance_destroy();    
+    //}
+	
+	instance_destroy();
 }
