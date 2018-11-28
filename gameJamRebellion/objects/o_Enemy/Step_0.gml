@@ -1,7 +1,7 @@
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 5B876483
-/// @DnDArgument : "code" "/// @description DEAD STATE$(13_10)$(13_10)//STATE DEAD$(13_10)if state == "dead" {$(13_10)    if image_speed > 0{$(13_10)        if image_index > image_number -1 instance_destroy();    $(13_10)    }$(13_10)}$(13_10)$(13_10)$(13_10)if (x+sprite_width/2 <= 0 && instance_exists(o_Player) && state = "alive"){$(13_10)    o_Player.hp -= 10;$(13_10)    instance_destroy();$(13_10)}"
+/// @DnDArgument : "code" "/// @description DEAD STATE$(13_10)$(13_10)//STATE DEAD$(13_10)if state == "dead" {$(13_10)    if image_speed > 0{$(13_10)        if image_index > image_number -1 instance_destroy();    $(13_10)    }$(13_10)}$(13_10)$(13_10)$(13_10)if (x+sprite_width/2 <= 0 && instance_exists(o_Player) && state = "alive"){$(13_10)    o_Player.hp -= 10;$(13_10)    instance_destroy();$(13_10)}$(13_10)$(13_10)"
 /// @description DEAD STATE
 
 //STATE DEAD
@@ -20,11 +20,13 @@ if (x+sprite_width/2 <= 0 && instance_exists(o_Player) && state = "alive"){
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 386E6CE7
-/// @DnDArgument : "code" "/// @description ATTACK STATE$(13_10)$(13_10)if(state = "attack"){$(13_10)	hspeed = 0;$(13_10)    sprite_index = s_enemy_attack;$(13_10)	alarm[0] = 15;$(13_10)}"
+/// @DnDArgument : "code" "/// @description ATTACK STATE$(13_10)$(13_10)if ((state == "attack") and (cooldown == false)) {$(13_10)	hspeed = 0;$(13_10)    sprite_index = s_enemy_attack;$(13_10)	o_Player.hp -= 10;$(13_10)	cooldown = true;$(13_10)	alarm[0] = 30;$(13_10)}"
 /// @description ATTACK STATE
 
-if(state = "attack"){
+if ((state == "attack") and (cooldown == false)) {
 	hspeed = 0;
     sprite_index = s_enemy_attack;
-	alarm[0] = 15;
+	o_Player.hp -= 10;
+	cooldown = true;
+	alarm[0] = 30;
 }

@@ -29,7 +29,7 @@ skey = keyboard_check(vk_space);
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 1FABB3CE
-/// @DnDArgument : "code" "/// @description MOVE STATE$(13_10)$(13_10)//STATE ALIVE$(13_10)if state == "alive" {$(13_10)    sprite_index = s_player;$(13_10)    $(13_10)    // MOUVEMENTS$(13_10)    if ukey {$(13_10)       y -= 15;$(13_10)       sprite_index = s_player;$(13_10)    }$(13_10)    $(13_10)    if dkey {$(13_10)       y += 15;$(13_10)       sprite_index = s_player;$(13_10)    }$(13_10)    $(13_10)    if lkey {$(13_10)       x -= 15;$(13_10)	   image_xscale = -0.3;$(13_10)    }$(13_10)    $(13_10)    if rkey {$(13_10)       x += 15;$(13_10)	   image_xscale = 0.3;$(13_10)    }$(13_10)    $(13_10)    //MOUVEMENTS OUT OF SCREEN$(13_10)    x = clamp(x, 100, room_width-100);$(13_10)	y = clamp(y, 100, room_height-100);$(13_10)}"
+/// @DnDArgument : "code" "/// @description MOVE STATE$(13_10)$(13_10)//STATE ALIVE$(13_10)if state == "alive" {$(13_10)    sprite_index = s_player;$(13_10)    $(13_10)    // MOUVEMENTS$(13_10)    if ukey {$(13_10)       y -= 15;$(13_10)       sprite_index = s_player;$(13_10)    }$(13_10)    $(13_10)    if dkey {$(13_10)       y += 15;$(13_10)       sprite_index = s_player;$(13_10)    }$(13_10)    $(13_10)    if lkey {$(13_10)       x -= 15;$(13_10)	   image_xscale = -0.3;$(13_10)    }$(13_10)    $(13_10)    if rkey {$(13_10)       x += 15;$(13_10)	   image_xscale = 0.3;$(13_10)    }$(13_10)    $(13_10)    //MOUVEMENTS OUT OF SCREEN$(13_10)    x = clamp(x, 32, room_width-sprite_width/2);$(13_10)	y = clamp(y, 0+sprite_height/2, room_height-sprite_height/2);$(13_10)}"
 /// @description MOVE STATE
 
 //STATE ALIVE
@@ -58,8 +58,8 @@ if state == "alive" {
     }
     
     //MOUVEMENTS OUT OF SCREEN
-    x = clamp(x, 100, room_width-100);
-	y = clamp(y, 100, room_height-100);
+    x = clamp(x, 32, room_width-sprite_width/2);
+	y = clamp(y, 0+sprite_height/2, room_height-sprite_height/2);
 }
 
 /// @DnDAction : YoYo Games.Common.Execute_Code
