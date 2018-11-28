@@ -81,3 +81,15 @@ if state == "dead" {
 	
 	instance_destroy();
 }
+
+/// @DnDAction : YoYo Games.Common.Execute_Code
+/// @DnDVersion : 1
+/// @DnDHash : 07983B99
+/// @DnDArgument : "code" "/// @description SHOOT COCONUT$(13_10)$(13_10)if (skey && cooldown == false){$(13_10)    instance_create_depth(x, y, 1, o_Coconut);$(13_10)    cooldown = true;$(13_10)    alarm[0] = 15;$(13_10)}"
+/// @description SHOOT COCONUT
+
+if (skey && cooldown == false){
+    instance_create_depth(x, y, 1, o_Coconut);
+    cooldown = true;
+    alarm[0] = 15;
+}

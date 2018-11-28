@@ -1,9 +1,13 @@
 /// @DnDAction : YoYo Games.Common.Variable
 /// @DnDVersion : 1
 /// @DnDHash : 3B60292D
+/// @DnDInput : 2
 /// @DnDArgument : "expr" "1"
+/// @DnDArgument : "expr_1" "false"
 /// @DnDArgument : "var" "hp"
+/// @DnDArgument : "var_1" "cooldown"
 hp = 1;
+cooldown = false;
 
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
@@ -16,7 +20,7 @@ state = "alive";
 /// @DnDAction : YoYo Games.Instances.Sprite_Scale
 /// @DnDVersion : 1
 /// @DnDHash : 189D9F6E
-/// @DnDArgument : "xscale" "0.5"
-/// @DnDArgument : "yscale" "0.5"
-image_xscale = 0.5;
-image_yscale = 0.5;
+/// @DnDArgument : "xscale" "0.7"
+/// @DnDArgument : "yscale" "0.7"
+image_xscale = 0.7;
+image_yscale = 0.7;

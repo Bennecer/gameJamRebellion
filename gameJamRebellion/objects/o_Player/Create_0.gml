@@ -1,9 +1,13 @@
 /// @DnDAction : YoYo Games.Common.Variable
 /// @DnDVersion : 1
 /// @DnDHash : 55BD1A9E
+/// @DnDInput : 2
 /// @DnDArgument : "expr" "100"
+/// @DnDArgument : "expr_1" "false"
 /// @DnDArgument : "var" "hp"
+/// @DnDArgument : "var_1" "cooldown"
 hp = 100;
+cooldown = false;
 
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
