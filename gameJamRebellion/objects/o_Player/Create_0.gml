@@ -1,8 +1,8 @@
 /// @DnDAction : YoYo Games.Common.Variable
 /// @DnDVersion : 1
 /// @DnDHash : 55BD1A9E
-/// @DnDInput : 6
-/// @DnDArgument : "expr" "100"
+/// @DnDInput : 7
+/// @DnDArgument : "expr" "5"
 /// @DnDArgument : "expr_1" "false"
 /// @DnDArgument : "expr_2" "false"
 /// @DnDArgument : "expr_4" "false"
@@ -13,12 +13,14 @@
 /// @DnDArgument : "var_3" "numberPlanted"
 /// @DnDArgument : "var_4" "treePlanted"
 /// @DnDArgument : "var_5" "cooldown2"
-hp = 100;
+/// @DnDArgument : "var_6" "randomTree"
+hp = 5;
 cooldown = false;
 cooldown1 = false;
 numberPlanted = 0;
 treePlanted = false;
 cooldown2 = false;
+randomTree = 0;
 
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
