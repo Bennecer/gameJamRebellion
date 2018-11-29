@@ -95,3 +95,40 @@ if (skey && cooldown == false){
     cooldown = true;
     alarm[0] = 15;
 }
+
+/// @DnDAction : YoYo Games.Common.Execute_Code
+/// @DnDVersion : 1
+/// @DnDHash : 046E5CB7
+/// @DnDArgument : "code" "/// @description PLANT TREE$(13_10)$(13_10)if (pkey and (cooldown1 == false)){$(13_10)	treePlanted = false;$(13_10)	numberPlanted = 0;$(13_10)	i=0;$(13_10)	while(i<instance_number(o_Tree)){$(13_10)		if(instance_find(o_Tree, i).image_index != 0){$(13_10)			numberPlanted += 1;	$(13_10)		}$(13_10)		i += 1;$(13_10)	}$(13_10)	show_debug_message(numberPlanted);$(13_10)	show_debug_message(treePlanted);$(13_10)	if(numberPlanted < instance_number(o_Tree)){$(13_10)		while(!treePlanted ){$(13_10)			hasFoundTree = false;$(13_10)			if(!hasFoundTree){$(13_10)				randomTree = instance_find(o_Tree, random(instance_number(o_Tree)));$(13_10)				if(randomTree.image_index == 0){$(13_10)					randomTree.image_index = 1;$(13_10)					hasFoundTree = true;$(13_10)					treePlanted = true;$(13_10)					numberPlanted += 1;$(13_10)				}$(13_10)			}$(13_10)		}$(13_10)		treePlanted = false;$(13_10)		cooldown1=true;$(13_10)		alarm[1] = 10;$(13_10)	}$(13_10)}"
+/// @description PLANT TREE
+
+if (pkey and (cooldown1 == false)){
+	treePlanted = false;
+	numberPlanted = 0;
+	i=0;
+	while(i<instance_number(o_Tree)){
+		if(instance_find(o_Tree, i).image_index != 0){
+			numberPlanted += 1;	
+		}
+		i += 1;
+	}
+	show_debug_message(numberPlanted);
+	show_debug_message(treePlanted);
+	if(numberPlanted < instance_number(o_Tree)){
+		while(!treePlanted ){
+			hasFoundTree = false;
+			if(!hasFoundTree){
+				randomTree = instance_find(o_Tree, random(instance_number(o_Tree)));
+				if(randomTree.image_index == 0){
+					randomTree.image_index = 1;
+					hasFoundTree = true;
+					treePlanted = true;
+					numberPlanted += 1;
+				}
+			}
+		}
+		treePlanted = false;
+		cooldown1=true;
+		alarm[1] = 10;
+	}
+}
