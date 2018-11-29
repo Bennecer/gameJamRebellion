@@ -1,28 +1,29 @@
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
-/// @DnDHash : 09609C04
-/// @DnDArgument : "code" "/// @description STATE DEAD$(13_10)/*if (hp <= 0) {$(13_10)	state = "dead";$(13_10)}*/$(13_10)$(13_10)if(state == "dead"){	$(13_10)	image_index = 0;$(13_10)	state = "alive";$(13_10)	hp = 5;$(13_10)}"
-/// @description STATE DEAD
-/*if (hp <= 0) {
-	state = "dead";
-}*/
+/// @DnDHash : 5AFA2C30
+/// @DnDArgument : "code" "/// @description GROWING TREE$(13_10)if (image_index > 0) {state = "grow";}$(13_10)$(13_10)if state == "grow" {$(13_10)	image_speed = 4;$(13_10)	$(13_10)	if (image_index = 4) {$(13_10)		image_speed = 0;$(13_10)		image_index = 4;$(13_10)	}$(13_10)	$(13_10)}"
+/// @description GROWING TREE
+if (image_index > 0) {state = "grow";}
 
-if(state == "dead"){	
-	image_index = 0;
-	state = "alive";
-	hp = 5;
-}/**/
+if state == "grow" {
+	image_speed = 4;
+	
+	if (image_index = 4) {
+		image_speed = 0;
+		image_index = 4;
+	}
+	
+}
 
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
-/// @DnDHash : 39632FB7
-/// @DnDArgument : "code" "/// @description ATTACK TREE STATE$(13_10)$(13_10)/*if ((state == "attackTree") and (cooldown2 == false)) {$(13_10)	o_Enemy.hspeed = 0;$(13_10)    o_Enemy.sprite_index = s_enemy_attack;$(13_10)	hp -= 1;$(13_10)	cooldown2 = true;$(13_10)	alarm[2] = 30;$(13_10)}*/"
-/// @description ATTACK TREE STATE
+/// @DnDHash : 09609C04
+/// @DnDArgument : "code" "/// @description STATE DEAD$(13_10)$(13_10)if(state == "dead"){	$(13_10)	sprite_index = s_tree;$(13_10)	image_index = 0;$(13_10)	state = "alive";$(13_10)	hp = 5;$(13_10)}"
+/// @description STATE DEAD
 
-/*if ((state == "attackTree") and (cooldown2 == false)) {
-	o_Enemy.hspeed = 0;
-    o_Enemy.sprite_index = s_enemy_attack;
-	hp -= 1;
-	cooldown2 = true;
-	alarm[2] = 30;
-}*//**/
+if(state == "dead"){	
+	sprite_index = s_tree;
+	image_index = 0;
+	state = "alive";
+	hp = 5;
+}

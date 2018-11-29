@@ -12,8 +12,9 @@ cooldown2 = false;
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 04C96D70
-/// @DnDArgument : "code" "state = "alive";"
+/// @DnDArgument : "code" "state = "alive";$(13_10)image_speed = 0;"
 state = "alive";
+image_speed = 0;
 
 /// @DnDAction : YoYo Games.Instances.Sprite_Scale
 /// @DnDVersion : 1

@@ -31,33 +31,45 @@ pkey = keyboard_check(vk_shift);
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 1FABB3CE
-/// @DnDArgument : "code" "/// @description MOVE STATE$(13_10)$(13_10)//STATE ALIVE$(13_10)if state == "alive" {$(13_10)    sprite_index = s_player;$(13_10)    $(13_10)    // MOUVEMENTS$(13_10)    if ukey {$(13_10)       y -= 15;$(13_10)       sprite_index = s_player;$(13_10)    }$(13_10)    $(13_10)    if dkey {$(13_10)       y += 15;$(13_10)       sprite_index = s_player;$(13_10)    }$(13_10)    $(13_10)    if lkey {$(13_10)       x -= 15;$(13_10)	   image_xscale = -0.3;$(13_10)    }$(13_10)    $(13_10)    if rkey {$(13_10)       x += 15;$(13_10)	   image_xscale = 0.3;$(13_10)    }$(13_10)    $(13_10)    //MOUVEMENTS OUT OF SCREEN$(13_10)    x = clamp(x, 32, room_width-sprite_width/2);$(13_10)	y = clamp(y, 0+sprite_height/2, room_height-sprite_height/2);$(13_10)}"
+/// @DnDArgument : "code" "/// @description MOVE STATE$(13_10)$(13_10)//STATE ALIVE$(13_10)if state == "alive" {$(13_10)    $(13_10)    // MOUVEMENTS$(13_10)    if ukey {$(13_10)		sprite_index = s_player_back_walk;$(13_10)		image_xscale = 0.45;$(13_10)		image_yscale = 0.45;$(13_10)		y -= 15;$(13_10)    }$(13_10)    $(13_10)    else if dkey {$(13_10)	    sprite_index = s_player_walk_front;$(13_10)		image_xscale = 0.45;$(13_10)		image_yscale = 0.45;$(13_10)	    y += 15;$(13_10)    }$(13_10)    $(13_10)    else if lkey {$(13_10)	    sprite_index = s_player_profile_walk;$(13_10)		image_xscale = -0.5;$(13_10)		image_yscale = 0.5;$(13_10)	    x -= 15;$(13_10)    }$(13_10)    $(13_10)    else if rkey {$(13_10)	    sprite_index = s_player_profile_walk;$(13_10)		image_xscale = 0.5;$(13_10)		image_yscale = 0.5;$(13_10)	    x += 15;$(13_10)    }$(13_10)	else{$(13_10)		sprite_index = s_player;$(13_10)		image_xscale = 0.45;$(13_10)		image_yscale = 0.45;$(13_10)	}$(13_10)    $(13_10)    //MOUVEMENTS OUT OF SCREEN$(13_10)    x = clamp(x, 32, room_width-sprite_width/2);$(13_10)	y = clamp(y, 0+sprite_height/2, room_height-sprite_height/2);$(13_10)}"
 /// @description MOVE STATE
 
 //STATE ALIVE
 if state == "alive" {
-    sprite_index = s_player;
     
     // MOUVEMENTS
     if ukey {
-       y -= 15;
-       sprite_index = s_player;
+		sprite_index = s_player_back_walk;
+		image_xscale = 0.45;
+		image_yscale = 0.45;
+		y -= 15;
     }
     
-    if dkey {
-       y += 15;
-       sprite_index = s_player;
+    else if dkey {
+	    sprite_index = s_player_walk_front;
+		image_xscale = 0.45;
+		image_yscale = 0.45;
+	    y += 15;
     }
     
-    if lkey {
-       x -= 15;
-	   image_xscale = -0.3;
+    else if lkey {
+	    sprite_index = s_player_profile_walk;
+		image_xscale = -0.5;
+		image_yscale = 0.5;
+	    x -= 15;
     }
     
-    if rkey {
-       x += 15;
-	   image_xscale = 0.3;
+    else if rkey {
+	    sprite_index = s_player_profile_walk;
+		image_xscale = 0.5;
+		image_yscale = 0.5;
+	    x += 15;
     }
+	else{
+		sprite_index = s_player;
+		image_xscale = 0.45;
+		image_yscale = 0.45;
+	}
     
     //MOUVEMENTS OUT OF SCREEN
     x = clamp(x, 32, room_width-sprite_width/2);
@@ -67,7 +79,7 @@ if state == "alive" {
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 139F3948
-/// @DnDArgument : "code" "/// @description DEAD STATE$(13_10)$(13_10)if (hp <= 0){$(13_10)    state = "dead";$(13_10)}$(13_10)$(13_10)if state == "dead" {$(13_10)    //sprite_index = s_player_dying;$(13_10)    $(13_10)   // if image_speed > 0 {$(13_10)     //   if image_index > image_number -1 instance_destroy();    $(13_10)    //}$(13_10)	$(13_10)	instance_destroy();$(13_10)}"
+/// @DnDArgument : "code" "/// @description DEAD STATE$(13_10)$(13_10)if (hp <= 0){$(13_10)    state = "dead";$(13_10)}$(13_10)$(13_10)if state == "dead" {$(13_10)    sprite_index = s_player_die;$(13_10)    $(13_10)    if image_speed > 0 {$(13_10)		if image_index > image_number -1 instance_destroy();    $(13_10)    }$(13_10)	$(13_10)}"
 /// @description DEAD STATE
 
 if (hp <= 0){
@@ -75,31 +87,42 @@ if (hp <= 0){
 }
 
 if state == "dead" {
-    //sprite_index = s_player_dying;
+    sprite_index = s_player_die;
     
-   // if image_speed > 0 {
-     //   if image_index > image_number -1 instance_destroy();    
-    //}
+    if image_speed > 0 {
+		if image_index > image_number -1 instance_destroy();    
+    }
 	
-	instance_destroy();
 }
 
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 07983B99
-/// @DnDArgument : "code" "/// @description SHOOT COCONUT$(13_10)$(13_10)if (skey && cooldown == false){$(13_10)    instance_create_depth(x, y, 1, o_Coconut);$(13_10)    cooldown = true;$(13_10)    alarm[0] = 15;$(13_10)}"
+/// @DnDArgument : "code" "/// @description SHOOT COCONUT$(13_10)$(13_10)if (skey && cooldown == false){$(13_10)	state = "attackCoconut";$(13_10)    instance_create_depth(x, y, 1, o_Coconut);$(13_10)    cooldown = true;$(13_10)    alarm[0] = 15;$(13_10)}$(13_10)$(13_10)if(state = "attackCoconut"){$(13_10)	sprite_index = s_player_attack_walk;$(13_10)	$(13_10)	 if image_speed > 0 {$(13_10)		if image_index > image_number -1 {$(13_10)			sprite_index = s_player;$(13_10)			state = "alive";$(13_10)		}$(13_10)    }$(13_10)}"
 /// @description SHOOT COCONUT
 
 if (skey && cooldown == false){
+	state = "attackCoconut";
     instance_create_depth(x, y, 1, o_Coconut);
     cooldown = true;
     alarm[0] = 15;
 }
 
+if(state = "attackCoconut"){
+	sprite_index = s_player_attack_walk;
+	
+	 if image_speed > 0 {
+		if image_index > image_number -1 {
+			sprite_index = s_player;
+			state = "alive";
+		}
+    }
+}
+
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 046E5CB7
-/// @DnDArgument : "code" "/// @description PLANT TREE$(13_10)$(13_10)if (pkey and (cooldown1 == false)){$(13_10)	treePlanted = false;$(13_10)	numberPlanted = 0;$(13_10)	i=0;$(13_10)	while(i<instance_number(o_Tree)){$(13_10)		if(instance_find(o_Tree, i).image_index != 0){$(13_10)			numberPlanted += 1;	$(13_10)		}$(13_10)		i += 1;$(13_10)	}$(13_10)	show_debug_message(numberPlanted);$(13_10)	show_debug_message(treePlanted);$(13_10)	if(numberPlanted < instance_number(o_Tree)){$(13_10)		while(!treePlanted ){$(13_10)			hasFoundTree = false;$(13_10)			if(!hasFoundTree){$(13_10)				randomTree = instance_find(o_Tree, random(instance_number(o_Tree)));$(13_10)				if(randomTree.image_index == 0){$(13_10)					randomTree.image_index = 1;$(13_10)					hasFoundTree = true;$(13_10)					treePlanted = true;$(13_10)					numberPlanted += 1;$(13_10)				}$(13_10)			}$(13_10)		}$(13_10)		treePlanted = false;$(13_10)		cooldown1=true;$(13_10)		alarm[1] = 10;$(13_10)	}$(13_10)}"
+/// @DnDArgument : "code" "/// @description PLANT TREE$(13_10)$(13_10)if (pkey and (cooldown1 == false)){$(13_10)	treePlanted = false;$(13_10)	numberPlanted = 0;$(13_10)	i=0;$(13_10)	while(i<instance_number(o_Tree)){$(13_10)		if(instance_find(o_Tree, i).image_index != 0){$(13_10)			numberPlanted += 1;	$(13_10)		}$(13_10)		i += 1;$(13_10)	}$(13_10)	if(numberPlanted < instance_number(o_Tree)){$(13_10)		while(!treePlanted ){$(13_10)			hasFoundTree = false;$(13_10)			if(!hasFoundTree){$(13_10)				randomTree = instance_find(o_Tree, random(instance_number(o_Tree)));$(13_10)				if(randomTree.image_index == 0){$(13_10)					randomTree.image_index = 1;$(13_10)					$(13_10)					hasFoundTree = true;$(13_10)					treePlanted = true;$(13_10)					numberPlanted += 1;$(13_10)				}$(13_10)			}$(13_10)		}$(13_10)		treePlanted = false;$(13_10)		cooldown1=true;$(13_10)		alarm[1] = 10;$(13_10)	}$(13_10)}"
 /// @description PLANT TREE
 
 if (pkey and (cooldown1 == false)){
@@ -112,8 +135,6 @@ if (pkey and (cooldown1 == false)){
 		}
 		i += 1;
 	}
-	show_debug_message(numberPlanted);
-	show_debug_message(treePlanted);
 	if(numberPlanted < instance_number(o_Tree)){
 		while(!treePlanted ){
 			hasFoundTree = false;
@@ -121,6 +142,7 @@ if (pkey and (cooldown1 == false)){
 				randomTree = instance_find(o_Tree, random(instance_number(o_Tree)));
 				if(randomTree.image_index == 0){
 					randomTree.image_index = 1;
+					
 					hasFoundTree = true;
 					treePlanted = true;
 					numberPlanted += 1;

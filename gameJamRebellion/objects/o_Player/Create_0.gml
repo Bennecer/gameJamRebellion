@@ -26,7 +26,7 @@ state = "alive";
 /// @DnDAction : YoYo Games.Instances.Sprite_Scale
 /// @DnDVersion : 1
 /// @DnDHash : 37F03193
-/// @DnDArgument : "xscale" "0.3"
-/// @DnDArgument : "yscale" "0.3"
-image_xscale = 0.3;
-image_yscale = 0.3;
+/// @DnDArgument : "xscale" "0.45"
+/// @DnDArgument : "yscale" "0.45"
+image_xscale = 0.45;
+image_yscale = 0.45;
