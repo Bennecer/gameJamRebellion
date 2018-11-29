@@ -98,10 +98,10 @@ if state == "dead" {
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 07983B99
-/// @DnDArgument : "code" "/// @description SHOOT COCONUT$(13_10)$(13_10)if (skey && cooldown == false){$(13_10)	state = "attackCoconut";$(13_10)    instance_create_depth(x, y, 1, o_Coconut);$(13_10)    cooldown = true;$(13_10)    alarm[0] = 15;$(13_10)}$(13_10)$(13_10)if(state = "attackCoconut"){$(13_10)	sprite_index = s_player_attack_walk;$(13_10)	$(13_10)	 if image_speed > 0 {$(13_10)		if image_index > image_number -1 {$(13_10)			sprite_index = s_player;$(13_10)			state = "alive";$(13_10)		}$(13_10)    }$(13_10)}"
+/// @DnDArgument : "code" "/// @description SHOOT COCONUT$(13_10)$(13_10)if (skey && cooldown == false && state != "dead"){$(13_10)	state = "attackCoconut";$(13_10)    instance_create_depth(x, y, 1, o_Coconut);$(13_10)    cooldown = true;$(13_10)    alarm[0] = 15;$(13_10)}$(13_10)$(13_10)if(state = "attackCoconut"){$(13_10)	sprite_index = s_player_attack_walk;$(13_10)	$(13_10)	 if image_speed > 0 {$(13_10)		if image_index > image_number -1 {$(13_10)			sprite_index = s_player;$(13_10)			state = "alive";$(13_10)		}$(13_10)    }$(13_10)}"
 /// @description SHOOT COCONUT
 
-if (skey && cooldown == false){
+if (skey && cooldown == false && state != "dead"){
 	state = "attackCoconut";
     instance_create_depth(x, y, 1, o_Coconut);
     cooldown = true;
@@ -122,7 +122,7 @@ if(state = "attackCoconut"){
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 046E5CB7
-/// @DnDArgument : "code" "/// @description PLANT TREE$(13_10)$(13_10)if (pkey and (cooldown1 == false)){$(13_10)	treePlanted = false;$(13_10)	numberPlanted = 0;$(13_10)	i=0;$(13_10)	while(i<instance_number(o_Tree)){$(13_10)		if(instance_find(o_Tree, i).image_index != 0){$(13_10)			numberPlanted += 1;	$(13_10)		}$(13_10)		i += 1;$(13_10)	}$(13_10)	if(numberPlanted < instance_number(o_Tree)){$(13_10)		while(!treePlanted ){$(13_10)			hasFoundTree = false;$(13_10)			if(!hasFoundTree){$(13_10)				randomTree = instance_find(o_Tree, random(instance_number(o_Tree)));$(13_10)				if(randomTree.image_index == 0){$(13_10)					randomTree.image_index = 1;$(13_10)					$(13_10)					hasFoundTree = true;$(13_10)					treePlanted = true;$(13_10)					numberPlanted += 1;$(13_10)				}$(13_10)			}$(13_10)		}$(13_10)		treePlanted = false;$(13_10)		cooldown1=true;$(13_10)		alarm[1] = 10;$(13_10)	}$(13_10)}"
+/// @DnDArgument : "code" "/// @description PLANT TREE$(13_10)$(13_10)if (pkey and (cooldown1 == false)){$(13_10)	treePlanted = false;$(13_10)	numberPlanted = 0;$(13_10)	i=0;$(13_10)	while(i<instance_number(o_Tree)){$(13_10)		if(instance_find(o_Tree, i).image_index != 0){$(13_10)			numberPlanted += 1;	$(13_10)		}$(13_10)		i += 1;$(13_10)	}$(13_10)	if(numberPlanted < instance_number(o_Tree)){$(13_10)		while(!treePlanted ){$(13_10)			hasFoundTree = false;$(13_10)			if(!hasFoundTree){$(13_10)				randomTree = instance_find(o_Tree, random(instance_number(o_Tree)));$(13_10)				if(randomTree.image_index == 0){$(13_10)					$(13_10)					tmpNumber = 1;$(13_10)					while(tmpNumber < randomTree.image_number){$(13_10)						randomTree.image_index = tmpNumber;$(13_10)						cooldown2 = true;$(13_10)						alarm[2] = 1;$(13_10)						tmpNumber++;$(13_10)					}$(13_10)					$(13_10)					hasFoundTree = true;$(13_10)					treePlanted = true;$(13_10)					numberPlanted += 1;$(13_10)				}$(13_10)			}$(13_10)		}$(13_10)		treePlanted = false;$(13_10)		cooldown1=true;$(13_10)		alarm[1] = 10;$(13_10)	}$(13_10)}"
 /// @description PLANT TREE
 
 if (pkey and (cooldown1 == false)){
@@ -141,7 +141,14 @@ if (pkey and (cooldown1 == false)){
 			if(!hasFoundTree){
 				randomTree = instance_find(o_Tree, random(instance_number(o_Tree)));
 				if(randomTree.image_index == 0){
-					randomTree.image_index = 1;
+					
+					tmpNumber = 1;
+					while(tmpNumber < randomTree.image_number){
+						randomTree.image_index = tmpNumber;
+						cooldown2 = true;
+						alarm[2] = 1;
+						tmpNumber++;
+					}
 					
 					hasFoundTree = true;
 					treePlanted = true;
