@@ -7,6 +7,7 @@
 /// @DnDArgument : "expr_2" "false"
 /// @DnDArgument : "expr_4" "false"
 /// @DnDArgument : "expr_5" "false"
+/// @DnDArgument : "expr_8" "1"
 /// @DnDArgument : "expr_9" "false"
 /// @DnDArgument : "var" "hp"
 /// @DnDArgument : "var_1" "cooldown"
@@ -26,7 +27,7 @@ treePlanted = false;
 cooldown2 = false;
 randomTree = 0;
 kills = 0;
-numberSeeds = 0;
+numberSeeds = 1;
 isCollision = false;
 
 /// @DnDAction : YoYo Games.Common.Execute_Code

@@ -2,13 +2,13 @@
 /// @DnDVersion : 1
 /// @DnDHash : 3B60292D
 /// @DnDInput : 3
-/// @DnDArgument : "expr" "1"
+/// @DnDArgument : "expr" "2"
 /// @DnDArgument : "expr_1" "false"
 /// @DnDArgument : "expr_2" "false"
 /// @DnDArgument : "var" "hp"
 /// @DnDArgument : "var_1" "cooldown"
 /// @DnDArgument : "var_2" "cooldown2"
-hp = 1;
+hp = 2;
 cooldown = false;
 cooldown2 = false;
 
