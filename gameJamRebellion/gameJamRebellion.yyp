@@ -511,6 +511,14 @@
             }
         },
         {
+            "Key": "ad64ac7b-f6e2-4fd1-8f81-ac193a583c74",
+            "Value": {
+                "id": "7742623f-0928-4d2c-b559-a27c9f1a6fd2",
+                "resourcePath": "sounds\\walk_on_leaf\\walk_on_leaf.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "ad657d58-58b4-4a89-8628-bb76f7c18d62",
             "Value": {
                 "id": "25de27a8-5886-42c4-b0f5-e57b7be32145",
