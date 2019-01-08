@@ -70,10 +70,10 @@ if ((state == "attackTree") and (cooldown2 == false)) {
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 6DF69672
-/// @DnDArgument : "code" "/// @description MOVE STATE$(13_10)$(13_10)if state == "move" {$(13_10)	$(13_10)    hspeed = choose(-7, -5, -2);$(13_10)}$(13_10)"
+/// @DnDArgument : "code" "/// @description MOVE STATE$(13_10)$(13_10)if state == "move" {$(13_10)	$(13_10)    hspeed = choose(-3);$(13_10)}$(13_10)"
 /// @description MOVE STATE
 
 if state == "move" {
 	
-    hspeed = choose(-7, -5, -2);
+    hspeed = choose(-3);
 }

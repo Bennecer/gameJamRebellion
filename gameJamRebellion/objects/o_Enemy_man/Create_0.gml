@@ -15,9 +15,8 @@ cooldown2 = false;
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 44D886BA
-/// @DnDArgument : "code" "randomize();$(13_10)hspeed = choose(-3, -2);$(13_10)state = "alive";"
-randomize();
-hspeed = choose(-3, -2);
+/// @DnDArgument : "code" "hspeed = choose(-4);$(13_10)state = "alive";"
+hspeed = choose(-4);
 state = "alive";
 
 /// @DnDAction : YoYo Games.Instances.Sprite_Scale

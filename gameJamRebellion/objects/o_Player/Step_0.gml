@@ -65,12 +65,15 @@ if state == "alive" {
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 6D7903A2
-/// @DnDArgument : "code" "/// @description HIT STATE$(13_10)$(13_10)if state == "hit" && hp > 0 {$(13_10)    sprite_index = s_player_hit;$(13_10)	//audio_play_sound(monkey_hit, 10, false);$(13_10)	image_xscale = -0.5;$(13_10)	image_yscale = 0.5;$(13_10)	$(13_10)	// MOUVEMENTS$(13_10)	x -= 7;$(13_10)    $(13_10)    //MOUVEMENTS OUT OF SCREEN$(13_10)    x = clamp(x, 32, room_width-sprite_width/2);$(13_10)	y = clamp(y, 0+sprite_height/2, room_height-sprite_height/2);$(13_10)	$(13_10)	if image_speed > 0 {$(13_10)		if image_index > image_number -1 {$(13_10)			sprite_index = s_player;$(13_10)			state = "alive";$(13_10)		}$(13_10)    }$(13_10)}"
+/// @DnDArgument : "code" "/// @description HIT STATE$(13_10)$(13_10)if state == "hit" && hp > 0 {$(13_10)    sprite_index = s_player_hit;$(13_10)	/*if !audio_is_playing(monkey_hit) {$(13_10)		audio_play_sound(monkey_hit, 10, false);$(13_10)	}*/$(13_10)	$(13_10)	image_xscale = -0.5;$(13_10)	image_yscale = 0.5;$(13_10)	$(13_10)	// MOUVEMENTS$(13_10)	x -= 7;$(13_10)    $(13_10)    //MOUVEMENTS OUT OF SCREEN$(13_10)    x = clamp(x, 32, room_width-sprite_width/2);$(13_10)	y = clamp(y, 0+sprite_height/2, room_height-sprite_height/2);$(13_10)	$(13_10)	if image_speed > 0 {$(13_10)		if image_index > image_number -1 {$(13_10)			/*if !audio_is_playing(monkey_hit) {$(13_10)				audio_play_sound(monkey_hit, 10, false);$(13_10)			}*/$(13_10)			sprite_index = s_player;$(13_10)			state = "alive";$(13_10)		}$(13_10)    }$(13_10)}"
 /// @description HIT STATE
 
 if state == "hit" && hp > 0 {
     sprite_index = s_player_hit;
-	//audio_play_sound(monkey_hit, 10, false);
+	/*if !audio_is_playing(monkey_hit) {
+		audio_play_sound(monkey_hit, 10, false);
+	}*/
+	
 	image_xscale = -0.5;
 	image_yscale = 0.5;
 	
@@ -83,16 +86,19 @@ if state == "hit" && hp > 0 {
 	
 	if image_speed > 0 {
 		if image_index > image_number -1 {
+			/*if !audio_is_playing(monkey_hit) {
+				audio_play_sound(monkey_hit, 10, false);
+			}*/
 			sprite_index = s_player;
 			state = "alive";
 		}
     }
-}
+}/**/
 
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 139F3948
-/// @DnDArgument : "code" "/// @description DEAD STATE$(13_10)$(13_10)if (hp <= 0){$(13_10)    state = "dead";$(13_10)}$(13_10)$(13_10)if state == "dead" {$(13_10)    sprite_index = s_player_die;$(13_10)    $(13_10)    if image_speed > 0 {$(13_10)		if image_index > image_number -1 {$(13_10)			instance_deactivate_all(1);$(13_10)			instance_activate_object(o_GameOver);$(13_10)			audio_pause_all();$(13_10)			audio_play_sound(game_die, 10, false);$(13_10)			instance_activate_object(o_Rejouer);$(13_10)			instance_activate_object(o_Quit);$(13_10)			instance_destroy(); $(13_10)		}$(13_10)    }$(13_10)	$(13_10)}"
+/// @DnDArgument : "code" "/// @description DEAD STATE$(13_10)$(13_10)if (hp <= 0){$(13_10)    state = "dead";$(13_10)}$(13_10)$(13_10)if state == "dead" {$(13_10)    sprite_index = s_player_die;$(13_10)	$(13_10)	if !audio_is_playing(monkey_die) {$(13_10)		audio_play_sound(monkey_die, 10, false);$(13_10)	}$(13_10)    $(13_10)    if image_speed > 0 {$(13_10)		if image_index > image_number -1 {$(13_10)			instance_deactivate_all(1);$(13_10)			instance_activate_object(o_GameOver);$(13_10)			audio_pause_all();$(13_10)			audio_play_sound(game_die, 10, false);$(13_10)			instance_activate_object(o_Rejouer);$(13_10)			instance_activate_object(o_Quit);$(13_10)			instance_destroy(); $(13_10)		}$(13_10)    }$(13_10)	$(13_10)}"
 /// @description DEAD STATE
 
 if (hp <= 0){
@@ -101,6 +107,10 @@ if (hp <= 0){
 
 if state == "dead" {
     sprite_index = s_player_die;
+	
+	if !audio_is_playing(monkey_die) {
+		audio_play_sound(monkey_die, 10, false);
+	}
     
     if image_speed > 0 {
 		if image_index > image_number -1 {
