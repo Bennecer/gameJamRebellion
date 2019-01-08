@@ -1,7 +1,7 @@
 /// @DnDAction : YoYo Games.Common.Variable
 /// @DnDVersion : 1
 /// @DnDHash : 3B60292D
-/// @DnDInput : 3
+/// @DnDInput : 4
 /// @DnDArgument : "expr" "5"
 /// @DnDArgument : "expr_1" "false"
 /// @DnDArgument : "expr_2" "false"
@@ -11,6 +11,7 @@
 hp = 5;
 cooldown = false;
 cooldown2 = false;
+variable = 0;
 
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
