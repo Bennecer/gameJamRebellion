@@ -447,6 +447,14 @@
             }
         },
         {
+            "Key": "8b202278-a79f-499d-8271-1a356331d321",
+            "Value": {
+                "id": "62dd78e0-d769-43ff-929f-f127b365385a",
+                "resourcePath": "sprites\\s_banana\\s_banana.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "8c7b68a7-0487-4f9f-b2b0-236b383ca6ad",
             "Value": {
                 "id": "46fa3673-50ec-407b-8a8a-d823c7836a6b",

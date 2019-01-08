@@ -2,7 +2,7 @@
 /// @DnDVersion : 1
 /// @DnDHash : 6696D96D
 /// @DnDInput : 4
-/// @DnDArgument : "expr" "5"
+/// @DnDArgument : "expr" "6"
 /// @DnDArgument : "expr_1" "false"
 /// @DnDArgument : "expr_2" "false"
 /// @DnDArgument : "expr_3" "false"
@@ -10,7 +10,7 @@
 /// @DnDArgument : "var_1" "cooldown2"
 /// @DnDArgument : "var_2" "cooldown"
 /// @DnDArgument : "var_3" "cooldown3"
-hp = 5;
+hp = 6;
 cooldown2 = false;
 cooldown = false;
 cooldown3 = false;
