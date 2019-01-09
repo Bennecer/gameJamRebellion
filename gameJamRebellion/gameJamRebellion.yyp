@@ -503,6 +503,14 @@
             }
         },
         {
+            "Key": "97f8ebf5-660e-49b2-9daa-8db107ff09d3",
+            "Value": {
+                "id": "8a98f47c-edbb-406e-b06b-426d8bca60ce",
+                "resourcePath": "sounds\\bonus_life\\bonus_life.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "992499b0-bb66-4da5-b49b-a8f90b3584c9",
             "Value": {
                 "id": "9192a887-d277-4cc6-bdb2-1cdabc2f0e2e",
