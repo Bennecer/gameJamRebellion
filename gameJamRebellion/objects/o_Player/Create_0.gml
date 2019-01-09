@@ -2,12 +2,12 @@
 /// @DnDVersion : 1
 /// @DnDHash : 55BD1A9E
 /// @DnDInput : 10
-/// @DnDArgument : "expr" "3000000"
+/// @DnDArgument : "expr" "5"
 /// @DnDArgument : "expr_1" "false"
 /// @DnDArgument : "expr_2" "false"
 /// @DnDArgument : "expr_4" "false"
 /// @DnDArgument : "expr_5" "false"
-/// @DnDArgument : "expr_8" "111111111111"
+/// @DnDArgument : "expr_8" "1"
 /// @DnDArgument : "expr_9" "false"
 /// @DnDArgument : "var" "hp"
 /// @DnDArgument : "var_1" "cooldown"
@@ -19,7 +19,7 @@
 /// @DnDArgument : "var_7" "kills"
 /// @DnDArgument : "var_8" "numberSeeds"
 /// @DnDArgument : "var_9" "isCollision"
-hp = 3000000;
+hp = 5;
 cooldown = false;
 cooldown1 = false;
 numberPlanted = 0;
@@ -27,7 +27,7 @@ treePlanted = false;
 cooldown2 = false;
 randomTree = 0;
 kills = 0;
-numberSeeds = 111111111111;
+numberSeeds = 1;
 isCollision = false;
 
 /// @DnDAction : YoYo Games.Common.Execute_Code
