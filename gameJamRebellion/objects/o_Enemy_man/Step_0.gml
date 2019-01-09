@@ -1,7 +1,7 @@
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
 /// @DnDHash : 5B876483
-/// @DnDArgument : "code" "/// @description DEAD STATE$(13_10)$(13_10)//STATE DEAD$(13_10)if (hp <= 0){$(13_10)    state = "dead";$(13_10)	hspeed = 0;$(13_10)}$(13_10)$(13_10)if (hp == 1){$(13_10)    sprite_index = s_enemy_man_almost_die;$(13_10)}$(13_10)$(13_10)if state == "dead" {$(13_10)	sprite_index = s_enemy_man_die;$(13_10)$(13_10)	$(13_10)    if !audio_is_playing(man_die) {$(13_10)		audio_play_sound(man_die, 10, false);$(13_10)	}$(13_10)	$(13_10)	$(13_10)    if image_speed > 0{$(13_10)        if(image_index > image_number -1) {$(13_10)			o_Player.kills += 1;$(13_10)			if(o_Player.kills = 3){$(13_10)				if(o_Player.numberPlanted < 11 && o_Player.numberSeeds < 11){$(13_10)					audio_play_sound(coins_1, 10, false);$(13_10)					o_Player.numberSeeds += 1;$(13_10)					o_Player.kills = 0;$(13_10)				}$(13_10)				else{$(13_10)					o_Player.kills = 0;$(13_10)				}$(13_10)			}$(13_10)			instance_destroy();$(13_10)		}$(13_10)    }$(13_10)}$(13_10)$(13_10)$(13_10)if (x+sprite_width/2 <= 0 && instance_exists(o_Player) && state != "dead"){$(13_10)    o_Player.hp -= 1;$(13_10)	if (!audio_is_playing(monkey_hurt) && o_Player.hp>1) {$(13_10)		audio_play_sound(monkey_hurt, 10, false);$(13_10)	}$(13_10)    instance_destroy();$(13_10)}$(13_10)$(13_10)"
+/// @DnDArgument : "code" "/// @description DEAD STATE$(13_10)$(13_10)//STATE DEAD$(13_10)if (hp <= 0){$(13_10)    state = "dead";$(13_10)	hspeed = 0;$(13_10)}$(13_10)$(13_10)if (hp == 1){$(13_10)    sprite_index = s_enemy_man_almost_die;$(13_10)}$(13_10)$(13_10)if state == "dead" {$(13_10)	sprite_index = s_enemy_man_die;$(13_10)	$(13_10)    if !audio_is_playing(man_die) {$(13_10)		audio_play_sound(man_die, 10, false);$(13_10)	}$(13_10)	$(13_10)	$(13_10)    if image_speed > 0{$(13_10)        if(image_index > image_number -1) {$(13_10)			o_Player.kills += 1;$(13_10)			if(o_Player.kills = 3){$(13_10)				if(o_Player.numberPlanted < 11 && o_Player.numberSeeds < 11){$(13_10)					audio_play_sound(coins_1, 10, false);$(13_10)					o_Player.numberSeeds += 1;$(13_10)					o_Player.kills = 0;$(13_10)				}$(13_10)				else{$(13_10)					o_Player.kills = 0;$(13_10)				}$(13_10)			}$(13_10)			instance_destroy();$(13_10)		}$(13_10)    }$(13_10)}$(13_10)$(13_10)$(13_10)if (x+sprite_width/2 <= 0 && instance_exists(o_Player) && state != "dead"){$(13_10)    o_Player.hp -= 1;$(13_10)	if (!audio_is_playing(monkey_hurt) && o_Player.hp>1) {$(13_10)		audio_play_sound(monkey_hurt, 10, false);$(13_10)	}$(13_10)    instance_destroy();$(13_10)}$(13_10)$(13_10)"
 /// @description DEAD STATE
 
 //STATE DEAD
@@ -16,7 +16,6 @@ if (hp == 1){
 
 if state == "dead" {
 	sprite_index = s_enemy_man_die;
-
 	
     if !audio_is_playing(man_die) {
 		audio_play_sound(man_die, 10, false);

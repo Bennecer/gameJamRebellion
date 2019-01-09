@@ -1,16 +1,19 @@
 /// @DnDAction : YoYo Games.Common.Variable
 /// @DnDVersion : 1
 /// @DnDHash : 3B60292D
-/// @DnDInput : 3
+/// @DnDInput : 4
 /// @DnDArgument : "expr" "3"
 /// @DnDArgument : "expr_1" "false"
 /// @DnDArgument : "expr_2" "false"
+/// @DnDArgument : "expr_3" "false"
 /// @DnDArgument : "var" "hp"
 /// @DnDArgument : "var_1" "cooldown"
 /// @DnDArgument : "var_2" "cooldown2"
+/// @DnDArgument : "var_3" "cooldown3"
 hp = 3;
 cooldown = false;
 cooldown2 = false;
+cooldown3 = false;
 
 /// @DnDAction : YoYo Games.Common.Execute_Code
 /// @DnDVersion : 1
